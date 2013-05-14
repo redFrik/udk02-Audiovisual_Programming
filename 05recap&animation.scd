@@ -12,7 +12,7 @@ SynthDef(\fm, {|freq= 750, amp= 0.5, depth= 4, fmrate= 100|
 	var env= EnvGen.ar(Env.perc(0.1, 0.6), doneAction:2);
 	var src= SinOsc.ar(freq+SinOsc.ar(fmrate, 0, depth), 0, amp);
 	Out.ar(0, Pan2.ar(src*env));
-}).memStore;
+}).add;
 )
 
 Synth(\fm, [\depth, 100])
@@ -166,7 +166,7 @@ SynthDef(\fm2, {|freq= 987, amp= 0.4, mf= 10, atk= 0.1, rel= 0.6|
 	var env2= EnvGen.ar(Env.perc(rel, atk));
 	var src= SinOsc.ar(freq+SinOsc.ar(freq*(1-env2), 0, mf*(1-env)), 0, amp);
 	Out.ar(0, Pan2.ar(src*env));
-}).memStore;
+}).add;
 )
 Synth(\fm2, [\mf, 150, \atk, 0.01, \rel, 0.2])
 Synth(\fm2, [\mf, 1050, \atk, 0.01, \rel, 0.2])

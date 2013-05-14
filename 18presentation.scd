@@ -8,7 +8,7 @@ SynthDef(\fluct, {|freq= 500, surface= 1, amount= 50, atk= 0.1, rel= 0.9|
 	var vary= Decay2.ar(Dust2.ar(surface)*amount, atk, rel);
 	var src= SinOsc.ar(freq+vary, 0, 0.1);
 	Out.ar(0, Pan2.ar(src));
-}).memStore;
+}).add;
 )
 
 a= Synth(\fluct)

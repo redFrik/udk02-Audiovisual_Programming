@@ -8,7 +8,7 @@ SynthDef(\boing, {|freq= 700, amp= 0.3, pan= 0|
 	var env= EnvGen.ar(Env.perc(0.01, 0.3), doneAction:2);
 	var src= SinOsc.ar(freq, env*2pi, amp);
 	Out.ar(0, Pan2.ar(src*env, pan));
-}).memStore;
+}).add;
 )
 
 Synth(\boing)
@@ -64,7 +64,7 @@ SynthDef(\hat, {|rel= 0.2, cutoff= 5000, amp= 0.1, pan= 0|
 	var env= EnvGen.ar(Env.perc(0, rel), doneAction:2);
 	var src= HPF.ar(PinkNoise.ar(amp), cutoff);
 	Out.ar(0, Pan2.ar(src*env, pan));
-}).memStore;
+}).add;
 )
 Synth(\hat, [\amp, 0.5])
 
@@ -207,12 +207,12 @@ SynthDef(\bd, {|freq= 170, amp= 0.5, rel= 0.2|
 	var env= EnvGen.ar(Env.perc(0, rel), doneAction:2);
 	var src= SinOsc.ar(freq, 0, amp);
 	Out.ar(0, Pan2.ar(src*env));
-}).memStore;
+}).add;
 SynthDef(\hh, {|freq= 1700, amp= 0.5, rel= 0.2|
 	var env= EnvGen.ar(Env.perc(0, rel), doneAction:2);
 	var src= HPF.ar(PinkNoise.ar(amp), freq);
 	Out.ar(0, Pan2.ar(src*env));
-}).memStore;
+}).add;
 )
 
 ~posx= 100;

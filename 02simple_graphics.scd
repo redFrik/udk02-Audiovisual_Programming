@@ -7,7 +7,7 @@ s.boot
 SynthDef(\udk, {|freq= 600, amp= 0.5|
 	var src= SinOsc.ar(freq, 0, amp);
 	Out.ar(0, Pan2.ar(src));
-}).memStore;
+}).add;
 )
 
 
@@ -43,7 +43,7 @@ Routine({
 SynthDef(\noise, {|amp= 0.5|
 	var src= WhiteNoise.ar(amp);
 	Out.ar(0, Pan2.ar(src));
-}).memStore;
+}).add;
 )
 
 
@@ -113,12 +113,12 @@ win.front;
 SynthDef(\udk, {|freq= 700, amp= 0.4, pan= 0|
 	var src= SinOsc.ar(freq, 0, amp);
 	Out.ar(0, Pan2.ar(src, pan));
-}).memStore;
+}).add;
 
 SynthDef(\noise, {|amp= 0.3|
 	var src= WhiteNoise.ar(amp);
 	Out.ar(0, Pan2.ar(src));
-}).memStore;
+}).add;
 )
 
 (

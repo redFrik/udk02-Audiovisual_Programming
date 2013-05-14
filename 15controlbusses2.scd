@@ -9,7 +9,7 @@ SynthDef(\sine2, {|out= 100, freq= 1, phase= 0, amp= 1, dur= 10, t_trig= 1|
 	var src= SinOsc.kr(freq, phase, amp);
 	var decay= Decay.kr(t_trig, dur).clip(0, 1);
 	Out.kr(out, src*decay);
-}).memStore;
+}).add;
 )
 
 //a simple sound that is controlled by lfo
@@ -19,7 +19,7 @@ SynthDef(\test2, {|lfo= 100, lfo2= 101, freq= 500, amp= 0.5|
 	var ctrl2= In.kr(lfo2, 1);//read from 2nd control bus
 	var src= BPF.ar(Saw.ar(freq*ctrl2.exprange(2, 0.5), ctrl*amp), freq);
 	Out.ar(0, Pan2.ar(src, ctrl));
-}).memStore;
+}).add;
 )
 
 //--
@@ -35,13 +35,13 @@ usr.background= Color.white;
 a= Synth(\sine2, [\out, c, \freq, 3.0.rand, \dur, duration]);
 b= Synth(\sine2, [\out, d, \freq, 3.0.rand, \dur, duration]);
 e= Synth(\test2, [\lfo, c, \lfo2, d, \amp, 0.5, \freq, width]);
+usr.clearOnRefresh= false;
 usr.drawFunc= {
 	var currentPoint;
 	if(~clear, {
-		usr.clearOnRefresh= true;
 		~clear= false;
-	}, {
-		usr.clearOnRefresh= false;
+		Pen.fillColor= Color.white;
+		Pen.fillRect(Rect(0, 0, width, height));
 	});
 	c.get({|val| x= val});
 	d.get({|val| y= val});
@@ -114,7 +114,7 @@ SynthDef(\sine3, {|out= 100, freq= 1, phase= 0, amp= 1, dur= 10, t_trig= 1|
 	var src= SinOsc.ar(SinOsc.kr(freq, 0, 2pi), phase, amp);
 	var decay= Decay.kr(t_trig, dur).clip(0, 1);
 	Out.kr(out, src*decay);
-}).memStore;
+}).add;
 )
 a.free;
 b.free;

@@ -11,7 +11,7 @@ SynthDef(\ping, {|amp= 0.1, freq= 400, atk= 0.01, rel= 0.1, mod= 10|
 	var src= SinOsc.ar(0, SinOsc.ar(freq, 0, 2pi*mod), amp);
 	var noise= WhiteNoise.ar(0.05);
 	Out.ar(0, Pan2.ar(src+noise*env));
-}).memStore;
+}).add;
 )
 
 
@@ -90,7 +90,7 @@ SynthDef(\hat, {|amp= 0.1, freq= 5000, atk= 0.01, rel= 0.1, pan= 0|
 	var env= EnvGen.ar(Env.perc(atk, rel), doneAction:2);
 	var src= BPF.ar(PinkNoise.ar(amp), freq, 0.3)+Saw.ar(freq, 0.1);
 	Out.ar(0, Pan2.ar(src*env, pan));
-}).memStore;
+}).add;
 )
 
 Pdef(\hh).play(quant:4)

@@ -19,7 +19,7 @@ s.boot
 SynthDef(\sine, {|freq= 500|
 	var src= SinOsc.ar(freq, 0, 0.5);
 	Out.ar(0, Pan2.ar(src));
-}).memStore;
+}).add;
 )
 
 a= Synth(\sine)
@@ -52,7 +52,7 @@ Routine({
 SynthDef(\noise, {|pan= 0|
 	var src= WhiteNoise.ar(0.5);
 	Out.ar(0, Pan2.ar(src, pan));
-}).memStore;
+}).add;
 )
 
 a= Synth(\noise)
@@ -104,7 +104,7 @@ SynthDef(\fm, {|amp= 0.5, atk= 0.01, rel= 0.2, freq= 500|
 	var env= EnvGen.ar(Env.perc(atk, rel), doneAction:2);
 	var src= SinOsc.ar(freq*(1-env), 0, env);
 	Out.ar(0, Pan2.ar(src*amp));
-}).memStore;
+}).add;
 )
 
 a= Synth(\fm)
@@ -121,7 +121,7 @@ SynthDef(\fm2, {|amp= 0.5, atk= 0.01, rel= 2, freq= 500, gate= 1|
 	var env= EnvGen.ar(Env.adsr(atk, 0.5, 0.5, rel), gate, doneAction:2);
 	var src= SinOsc.ar(freq, 0, env);
 	Out.ar(0, Pan2.ar(src*amp));
-}).memStore;
+}).add;
 )
 a= Synth(\fm2)	//start the synth
 a.set(\gate, 0)	//release gate and the synth will stop
@@ -133,7 +133,7 @@ SynthDef(\fm3, {|amp= 0.5, atk= 0.01, rel= 0.2, freq= 500|
 	var env= EnvGen.ar(Env.perc(atk, rel), doneAction:2);
 	var src= SinOsc.ar(freq*Saw.ar(400*env), 0, env);
 	Out.ar(0, Pan2.ar(src*amp));
-}).memStore;
+}).add;
 )
 
 a= Synth(\fm3)
@@ -215,7 +215,7 @@ SynthDef(\pm, {|amp= 0.5, atk= 0.01, rel= 0.2, freq= 500|
 	var env= EnvGen.ar(Env.perc(atk, rel), doneAction:2);
 	var src= SinOsc.ar(freq, SinOsc.ar(freq*env)*pi, env);
 	Out.ar(0, Pan2.ar(src*amp));
-}).memStore;
+}).add;
 )
 
 a= Synth(\pm)
@@ -255,7 +255,7 @@ SynthDef(\pm, {|amp= 0.5, atk= 0.01, rel= 0.2, freq= 500|
 	var env= EnvGen.ar(Env.perc(atk, rel), doneAction:2);
 	var src= SinOsc.ar(freq, SinOsc.ar(freq*env)*pi, env);
 	Out.ar(0, Pan2.ar(src*amp));
-}).memStore;
+}).add;
 )
 
 Pdef(\seq1).play(quant:4)

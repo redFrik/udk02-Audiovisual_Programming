@@ -8,7 +8,7 @@ SynthDef(\poing, {|freq= 700, amp= 0.3, pan= 0, atk= 0.004, rel= 0.4|
 	var env= EnvGen.ar(Env.perc(atk, rel), doneAction:2);
 	var src= SinOsc.ar(freq, 1-env*5pi, amp);
 	Out.ar(0, Pan2.ar(src*env, pan));
-}).memStore;
+}).add;
 )
 
 Synth(\poing)

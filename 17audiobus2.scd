@@ -8,12 +8,12 @@ SynthDef(\bd, {|amp= 0.1, freq= 500, out= 0|
 	var env= EnvGen.ar(Env.perc(0.01, 0.5), doneAction:2);
 	var src= SinOsc.ar(XLine.kr(freq, freq*0.5, 0.5), 0, amp);
 	Out.ar(out, Pan2.ar(src*env));
-}).memStore;
+}).add;
 SynthDef(\hh, {|amp= 0.1, freq= 500, out= 0|
 	var env= EnvGen.ar(Env.perc(0.01, 0.05), doneAction:2);
 	var src= BPF.ar(WhiteNoise.ar(amp), freq);
 	Out.ar(out, Pan2.ar(src*env));
-}).memStore;
+}).add;
 SynthDef(\efx_echoRing, {|in= 100, out= 0|
 	var dry= InFeedback.ar(in, 2);
 	var freq= MouseY.kr(2, 200, 'exponential');
@@ -21,7 +21,7 @@ SynthDef(\efx_echoRing, {|in= 100, out= 0|
 	var mix= MouseX.kr(-1, 1);
 	var wet= CombN.ar(dry*SinOsc.ar(freq, 0, 1), 0.125, 0.125, decay);
 	Out.ar(out, XFade2.ar(dry, wet, mix));
-}).memStore;
+}).add;
 )
 
 //start the effect

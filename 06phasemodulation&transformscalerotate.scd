@@ -10,7 +10,7 @@ SynthDef(\pm, {|amp= 0.5, freq= 500, pmamp= 2|
 	var env= EnvGen.ar(Env.perc(0.01, 0.4), doneAction:2);
 	var src= SinOsc.ar(0, SinOsc.ar(freq, 0, 2pi*pmamp), amp);
 	Out.ar(0, Pan2.ar(src*env));
-}).memStore;
+}).add;
 )
 
 Synth(\pm)
@@ -24,7 +24,7 @@ SynthDef(\pm2, {|amp= 0.5, freq= 500, pmamp= 2, mod= 50, atk= 0.01, rel= 0.2|
 	var env= EnvGen.ar(Env.perc(atk, rel), doneAction:2);
 	var src= SinOsc.ar(0, BPF.ar(LFSaw.ar(freq, 0, pmamp), mod), amp);
 	Out.ar(0, Pan2.ar(src*env));
-}).memStore;
+}).add;
 )
 Synth(\pm2)
 Synth(\pm2, [\pmamp, 10, \mod, 500])

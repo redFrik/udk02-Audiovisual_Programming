@@ -109,7 +109,7 @@ SynthDef(\snare, {|amp= 0.5, atk= 0.001, rel= 0.1|
 	var env= EnvGen.ar(Env.perc(atk, rel), doneAction:2);
 	var src= BPF.ar(WhiteNoise.ar(env));
 	Out.ar(0, Pan2.ar(src));
-}).memStore;
+}).add;
 )
 
 //test the sound
@@ -196,7 +196,7 @@ SynthDef(\saw, {|freq= 400, amp= 0.5|
 	var env= EnvGen.ar(Env.perc(0.005, 0.1), doneAction:2);
 	var src= Saw.ar(freq, amp);
 	Out.ar(0, Pan2.ar(src*env));
-}).memStore;
+}).add;
 )
 Synth(\saw)
 Synth(\saw, [\freq, 900])

@@ -14,7 +14,7 @@ SynthDef(\env, {|freq= 600, amp= 0.5|
 	var src= SinOsc.ar(freq, 0, amp);
 	var env= EnvGen.ar(Env.perc(1, 0.9), doneAction:2);
 	Out.ar(0, Pan2.ar(src*env));
-}).memStore;
+}).add;
 )
 
 Synth(\env)
@@ -40,7 +40,7 @@ SynthDef(\another, {|freq= 600, amp= 0.5|
 	var env2= EnvGen.ar(Env.perc(0.4, 0.3));
 	var src= SinOsc.ar(freq*(1-env2)+500, 0, amp);
 	Out.ar(0, Pan2.ar(src*env1));
-}).memStore;
+}).add;
 )
 Synth(\another)
 Synth(\another, [\freq, 900])

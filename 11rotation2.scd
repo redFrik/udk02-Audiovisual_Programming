@@ -81,7 +81,7 @@ Routine({
 SynthDef(\blip, {|num= 1, freq= 200, pan= 0|
 	var src= Blip.ar(freq, num, 0.2);
 	Out.ar(0, Pan2.ar(src, pan));
-}).memStore;
+}).add;
 )
 
 (
@@ -151,7 +151,7 @@ SynthDef(\amptrack, {
 	var src= SoundIn.ar(0);//mic input
 	var trk= Amplitude.kr(src);
 	SendTrig.kr(Impulse.kr(40), 0, trk);
-}).memStore;
+}).add;
 )
 
 (	//then set up a responder

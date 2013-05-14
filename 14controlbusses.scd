@@ -9,19 +9,19 @@ s.boot
 SynthDef(\sine, {|out= 100, freq= 2, amp= 1|
 	var src= SinOsc.ar(freq, 0, amp);
 	Out.kr(out, src);
-}).memStore;
+}).add;
 SynthDef(\tri, {|out= 100, freq= 2, amp= 1|
 	var src= LFTri.ar(freq, 0, amp);
 	Out.kr(out, src);
-}).memStore;
+}).add;
 SynthDef(\saw, {|out= 100, freq= 2, amp= 1|
 	var src= LFSaw.ar(freq, 0, amp);
 	Out.kr(out, src);
-}).memStore;
+}).add;
 SynthDef(\saw2, {|out= 100, freq= 2, amp= 1|
 	var src= LFSaw.ar(freq, 0, amp)+BrownNoise.ar(0.3);
 	Out.kr(out, src);
-}).memStore;
+}).add;
 )
 
 //control bus = .kr
@@ -34,7 +34,7 @@ SynthDef(\test, {|lfo= 100, freq= 500, amp= 0.5, pan= 0|
 	var ctrl= In.kr(lfo, 1);	//read from control bus
 	var src= SinOsc.ar(freq*ctrl, 0, amp);
 	Out.ar(0, Pan2.ar(src, pan));
-}).memStore;
+}).add;
 )
 
 

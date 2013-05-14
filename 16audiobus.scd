@@ -9,7 +9,7 @@ SynthDef(\test, {|amp= 0.1, freq= 500, out= 0|
 	var env= EnvGen.ar(Env.perc(0.05, 0.5), doneAction:2);
 	var src= SinOsc.ar(freq, 0, amp);
 	Out.ar(out, Pan2.ar(src*env));
-}).memStore;
+}).add;
 )
 
 //start a sequencer
@@ -25,7 +25,7 @@ SynthDef(\efxEcho, {|in= 0, out= 0|
 	var src= InFeedback.ar(in, 2);
 	var mod= CombN.ar(src, 0.2, 0.2, 1.5);	//0.2 is max delaytime and delaytime, 1.5 is decay time
 	Out.ar(out, mod);
-}).memStore;
+}).add;
 )
 
 //start effect synth taking input from stereo bus 2-3 and send to 0-1 so that we can hear it
@@ -39,7 +39,7 @@ SynthDef(\efxRing, {|in= 0, out= 0|
 	var src= InFeedback.ar(in, 2);
 	var mod= src*SinOsc.ar(MouseX.kr(40, 4000, 'exponential'));
 	Out.ar(out, mod);
-}).memStore;
+}).add;
 )
 
 //start effect synth.  listens to 4-5 and sends to 0-1.  move the mouse to hear the effect more clearly
@@ -57,7 +57,7 @@ SynthDef(\hh, {|out= 0, freq= 5000, amp= 0.1|
 	var env= EnvGen.ar(Env.perc(0.001, 0.1), doneAction:2);
 	var src= HPF.ar(PinkNoise.ar(amp), freq);
 	Out.ar(out, Pan2.ar(src*env));
-}).memStore;
+}).add;
 )
 
 //sequencer for hihat

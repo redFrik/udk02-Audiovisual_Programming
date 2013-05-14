@@ -10,7 +10,7 @@ SynthDef(\fm, {|freq= 500, amp= 0.5, atk= 0.01, rel= 0.4|
 	var env= EnvGen.kr(Env.perc(atk, rel), doneAction:2);
 	var src= SinOsc.ar(freq+SinOsc.ar(10, 0, 100), 0, amp);
 	Out.ar(0, Pan2.ar(src*env));
-}).memStore;
+}).add;
 )
 
 Synth(\fm, [\freq, 1000])
@@ -30,7 +30,7 @@ SynthDef(\fm2, {|freq= 500, amp= 0.5, modAmp= 10, modFreq= 50, atk= 0.1, rel= 0.
 	var env= EnvGen.kr(Env.perc(atk, rel), doneAction:2);
 	var src= SinOsc.ar(freq+Saw.ar(modFreq, modAmp), 0, amp);
 	Out.ar(0, Pan2.ar(src*env));
-}).memStore;
+}).add;
 )
 
 Synth(\fm2, [\modAmp, 100, \modFreq, 50])
@@ -45,7 +45,7 @@ SynthDef(\fm3, {|freq= 500, amp= 0.5, modAmp= 10, modFreq= 50, atk= 0.1, rel= 0.
 	var env= EnvGen.kr(Env.perc(atk, rel), doneAction:2);
 	var src= SinOsc.ar(freq+Saw.ar(modFreq, modAmp*env), 0, amp);
 	Out.ar(0, Pan2.ar(src*env));
-}).memStore;
+}).add;
 )
 
 Synth(\fm3, [\modFreq, 15, \modAmp, 100, \atk, 1, \rel, 2])

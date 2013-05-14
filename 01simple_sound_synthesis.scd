@@ -21,7 +21,7 @@ s.boot
 (
 SynthDef(\udk, {|freq= 500|
 	Out.ar(0, SinOsc.ar(freq, 0, 1));
-}).memStore;
+}).add;
 )
 
 Synth(\udk, [\freq, 600])
@@ -35,7 +35,7 @@ Synth(\udk, [\freq, 800])
 (
 SynthDef(\udk2, {|freq= 500|
 	Out.ar(0, Saw.ar(freq, 1));
-}).memStore;
+}).add;
 )
 Synth(\udk2, [\freq, 550])
 Synth(\udk2, [\freq, 290])
@@ -44,7 +44,7 @@ Synth(\udk2, [\freq, 590])
 (
 SynthDef(\udk3, {|freq= 500, amp= 0.5|
 	Out.ar(0, Saw.ar(freq, amp));
-}).memStore;
+}).add;
 )
 Synth(\udk3, [\freq, 700, \amp, 0.5])
 Synth(\udk3, [\freq, 950, \amp, 0.2])
@@ -78,7 +78,7 @@ SynthDef(\udk4, {|freq= 500, amp= 0.5|
 	src= PinkNoise.ar(amp);
 	efx= BPF.ar(src, freq);
 	Out.ar(0, efx);
-}).memStore;
+}).add;
 )
 
 a= Synth(\udk4, [\amp, 0.7])
