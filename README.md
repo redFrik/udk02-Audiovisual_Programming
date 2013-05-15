@@ -27,3 +27,11 @@ dates
 - [x] 04feb: [`16audiobus.scd`](https://github.com/redFrik/udk02-Audiovisual_Programming/blob/master/16audiobus.scd)
 - [x] 05feb: [`17audiobus2.scd`](https://github.com/redFrik/udk02-Audiovisual_Programming/blob/master/17audiobus2.scd)
 - [x] 11feb: [`18presentation.scd`](https://github.com/redFrik/udk02-Audiovisual_Programming/blob/master/18presentation.scd)
+
+various drafts and examples
+---------------------------
+* [`examples07.scd`](https://github.com/redFrik/udk02-Audiovisual_Programming/blob/master/examples07.scd)
+* [`examples07rotatePushPop.scd`](https://github.com/redFrik/udk02-Audiovisual_Programming/blob/master/examples07rotatePushPop.scd)
+* [`Untitled 2.scd`](https://github.com/redFrik/udk02-Audiovisual_Programming/blob/master/Untitled 2.scd)
+* [`Untitled 4.scd`](https://github.com/redFrik/udk02-Audiovisual_Programming/blob/master/Untitled 4.scd)
+* [`Untitled 5.scd`](https://github.com/redFrik/udk02-Audiovisual_Programming/blob/master/Untitled 5.scd)
