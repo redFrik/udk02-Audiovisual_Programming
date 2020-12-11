@@ -24,7 +24,7 @@ a.free
 //--
 (
 var width= 600, height= 400;
-var win= SCWindow("ttest", Rect(100, 100, width, height), false, false);	//3rd argument for Window is resize, 4th argument is border on/off
+var win= Window("ttest", Rect(100, 100, width, height), false, false);	//3rd argument for Window is resize, 4th argument is border on/off
 win.front;
 ~mywin= win;	//use a 'global' variable to access window later
 )

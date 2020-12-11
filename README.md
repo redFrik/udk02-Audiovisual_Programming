@@ -31,6 +31,6 @@ dates
 
 various drafts and examples
 ---------------------------
-* [`Untitled 2.scd`](https://github.com/redFrik/udk02-Audiovisual_Programming/blob/master/Untitled 2.scd)
-* [`Untitled 4.scd`](https://github.com/redFrik/udk02-Audiovisual_Programming/blob/master/Untitled 4.scd)
-* [`Untitled 5.scd`](https://github.com/redFrik/udk02-Audiovisual_Programming/blob/master/Untitled 5.scd)
+* [`Untitled 2.scd`](<https://github.com/redFrik/udk02-Audiovisual_Programming/blob/master/Untitled 2.scd>)
+* [`Untitled 4.scd`](<https://github.com/redFrik/udk02-Audiovisual_Programming/blob/master/Untitled 4.scd>)
+* [`Untitled 5.scd`](<https://github.com/redFrik/udk02-Audiovisual_Programming/blob/master/Untitled 5.scd>)

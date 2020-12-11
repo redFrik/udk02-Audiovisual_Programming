@@ -70,12 +70,12 @@ a.free;	//stop the echo
 b.free;	//stop the ring modulator
 
 //how to build some simple effects...
-//delay/echo			CombN
+//delay/echo		CombN
 //ring modulation	*SinOsc
-//distortion			.clip
-//filtering				LPF, BPF, HPF
-//reverb					FreeVerb
-//pitchshift			PitchShift, ZeroCrossing
+//distortion		.clip
+//filtering			LPF, BPF, HPF
+//reverb			FreeVerb
+//pitchshift		PitchShift, ZeroCrossing
 
 //see helpfile 'Tour of Unit Generators'
 

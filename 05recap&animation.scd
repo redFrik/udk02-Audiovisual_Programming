@@ -210,7 +210,7 @@ usr.drawFunc= {
 				Pen.fillColor= Color.white;
 			});
 			Pen.fillOval(Rect(x/7*width+(width/7/2-20), y/8*height+(height/8/2-20), 40, 40));
-					
+
 		};
 	};
 };
@@ -228,13 +228,13 @@ usr.drawFunc= {
 	8.do{|x|	//here 8 instead of 7 to conver for the jump
 		8.do{|y|
 			var xpos= x/7*width-(cnt%(width/7));
-			
+
 			//another option...
 			//var xpos= x/7*width-cnt;
 			//if(xpos< -40, {xpos= xpos+width+40});
-			
+
 			Pen.fillColor= Color(1, 0.5, 0);
-			Pen.fillOval(Rect(xpos, y/8*height, 40, 40));		
+			Pen.fillOval(Rect(xpos, y/8*height, 40, 40));
 		};
 	};
 	cnt= cnt+1;

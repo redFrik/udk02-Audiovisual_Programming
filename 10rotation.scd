@@ -103,7 +103,7 @@ Routine({
 }).play(AppClock);
 )
 
-//--make a simple sound to test the 
+//--make a simple sound to test the
 (
 SynthDef(\snare, {|amp= 0.5, atk= 0.001, rel= 0.1|
 	var env= EnvGen.ar(Env.perc(atk, rel), doneAction:2);

@@ -98,7 +98,7 @@ usr.drawFunc= {
 	120.do{
 		Pen.strokeColor= Color.black;
 		Pen.strokeRect(Rect((width-30).rand, height/2-50, 30, 100));
-		
+
 		Pen.fillColor= Color.red;
 		Pen.fillOval(Rect(width.rand, height.rand, 5, 5));
 	};

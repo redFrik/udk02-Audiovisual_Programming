@@ -25,7 +25,7 @@ var usr= UserView(win, Rect(0, 0, width, height));
 usr.background= Color.white;
 num= 5;		//try to change number of segments
 usr.drawFunc= {
-	var radius = 140; 
+	var radius = 140;
 	Pen.strokeColor= Color.black;
 	Pen.translate(width*0.5, height*0.5);
 	num.do{|i|
@@ -44,11 +44,11 @@ var usr= UserView(win, Rect(0, 0, width, height));
 usr.background= Color.white;
 num= 50;		//try to change number of segments
 usr.drawFunc= {
-	var radius = 140, x, y; 
+	var radius = 140, x, y;
 	Pen.strokeColor= Color.black;
 	Pen.translate(width*0.5, height*0.5);
 	num.do{|i|
-		x = (width * 0.4).rand2; 
+		x = (width * 0.4).rand2;
 		y = (height * 0.4).rand2;
 		Pen.strokeOval(Rect(radius * -0.5 + x, radius * -1 + y, radius, radius));
 	};
@@ -102,7 +102,7 @@ usr.drawFunc= {
 win.front;
 )
 
-//make it expand ? 
+//make it expand ?
 (
 var width= 500, height= 500, num;
 var win= Window("pushpop2", Rect(300, 300, width, height), false);
@@ -152,8 +152,8 @@ var usr= UserView(win, Rect(0, 0, width, height));
 usr.background= Color.white;
 num= 700;
 usr.drawFunc= {
-	Pen.strokeColor= Color.black; 
-	
+	Pen.strokeColor= Color.black;
+
 	3.do { |i|
 		Pen.push;
 		Pen.rotate(i / 3, width * 0.5, height * 0.5);
@@ -189,9 +189,9 @@ usr.drawFunc= {
 		Pen.translate(0, (i * 0.1).sin + 1 * 20 );
 		Pen.strokeOval(Rect(0, 0, 140, 140));
 	};
-}; 
-Tdef(\spiral, { 
-	300.do { 
+};
+Tdef(\spiral, {
+	300.do {
 		rotAngle = rotAngle + (2pi / 300);
 		0.03.wait;
 		win.refresh;
@@ -214,18 +214,18 @@ usr.drawFunc= {
 	Pen.strokeColor= Color.black;
 	Pen.rotate(rotAngle, width * 0.5, height * 0.5);
 	Pen.translate(width*0.8, height*0.2);
-	num.do{|i| 
+	num.do{|i|
 		var myXY = toplefts[i];
-		toplefts[i] = myXY + [10.0.bilinrand, 10.0.bilinrand]; 
+		toplefts[i] = myXY + [10.0.bilinrand, 10.0.bilinrand];
 		Pen.rotate(1/num*2pi*3);//3 laps
 		Pen.scale(0.995, 0.995);//decrease size
 		Pen.translate(0, 7 );
 		Pen.strokeOval(Rect(myXY[0], myXY[1], 140, 140));
 	};
 	toplefts.keep(5).round(0.01).postln;
-}; 
-Tdef(\spiral, { 
-	600.do { 
+};
+Tdef(\spiral, {
+	600.do {
 		// rotAngle = rotAngle + (2pi / 300);
 		0.03.wait;
 		win.refresh;
@@ -291,7 +291,7 @@ usr.drawFunc= {
 	num.do{|i|
 		Pen.push;		//try commenting out
 		Pen.rotate(2pi.rand);//rotate random direction
-		Pen.translate(100, 0); 
+		Pen.translate(100, 0);
 		Pen.moveTo(Point(0, 0));
 		Pen.lineTo(Point(40, 40));
 		Pen.lineTo(Point(-40, 40));
@@ -334,6 +334,7 @@ var usr= UserView(win, Rect(0, 0, width, height));
 usr.background= Color.white;
 num= 150;		//number of arms
 usr.drawFunc= {
+	Pen.strokeColor= Color.black;
 	Pen.translate(width*0.5, height*0.5);
 	num.do{|i|
 		var seg= 25.rand+5;		//number of segments per arm
@@ -345,7 +346,7 @@ usr.drawFunc= {
 			Pen.rotate(0.5.rand2);
 			Pen.translate(10, 0);
 			Pen.scale(0.975, 0.975);
-			Pen.lineTo(Point(0, 0));
+			Pen.lineTo(Point(10, 0));
 			Pen.stroke;
 		};
 		Pen.pop;
@@ -370,23 +371,24 @@ var width= 500, height= 500, num = 100;
 var win= Window("pushpop8", Rect(100, 100, width, height));
 var usr= UserView(win, Rect(0, 0, width, height));
 
-var arms = { 
-	var numSegs = 25.rand+5; 
+var arms = {
+	var numSegs = 25.rand+5;
 	var dict = ();
 	dict.put(\numSegs, numSegs);
-	dict.put(\rotations, { 0.5.rand2 }.dup(numSegs)); 
+	dict.put(\rotations, { 0.5.rand2 }.dup(numSegs));
 	dict;
 }.dup(num);
 
 usr.background= Color.white;
 
 usr.drawFunc= {
+	Pen.strokeColor= Color.black;
 	Pen.translate(width*0.5, height*0.5);
 	num.do{|i|
 		var seg = arms[i][\numSegs]; //number of segments per arm
-		
+
 		var rotations = arms[i][\rotations];
-		
+
 		arms[i][\rotations] = rotations.collect { |rot| rot + 0.03.rand2 };
 		Pen.push;
 		Pen.rotate(i/num*2pi);
@@ -396,7 +398,7 @@ usr.drawFunc= {
 			Pen.rotate(rotations[j]);
 			Pen.translate(10, 0);
 			Pen.scale(0.975, 0.975);
-			Pen.lineTo(Point(0, 0));
+			Pen.lineTo(Point(10, 0));
 			Pen.stroke;
 		};
 		Pen.pop;

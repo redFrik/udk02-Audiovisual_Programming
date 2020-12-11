@@ -175,6 +175,7 @@ var usr= UserView(win, Rect(0, 0, width, height));
 usr.background= Color.white;
 num= 150;		//number of arms
 usr.drawFunc= {
+	Pen.strokeColor= Color.black;
 	Pen.translate(width*0.5, height*0.5);
 	num.do{|i|
 		var seg= 25.rand+5;		//number of segments per arm
@@ -186,7 +187,7 @@ usr.drawFunc= {
 			Pen.rotate(0.5.rand2);
 			Pen.translate(10, 0);
 			Pen.scale(0.975, 0.975);
-			Pen.lineTo(Point(0, 0));
+			Pen.lineTo(Point(10, 0));
 			Pen.stroke;
 		};
 		Pen.pop;

@@ -33,7 +33,7 @@ norman mclaren - begone dull care (1949)
 len lye - free radicals (1958)
 john whitney - arabesque (1975)
 alexander rutterford - gantz graf (2002)
-robin fox - backscatter (2004) 
+robin fox - backscatter (2004)
 ryoji ikeda - datamatics (2006)
 mike winkelmann - beeple iv.6 (2006)
 the barbarian group - magnetosphere itunes music visualizer (2007)
@@ -46,12 +46,12 @@ pd/gem/pdp			http://puredata.info
 openframeworks		http://www.openframeworks.cc
 processing			http://processing.org
 luaav				http://lua-av.mat.ucsb.edu
-vvvv					http://vvvv.org
+vvvv				http://vvvv.org
 isadora				http://troikatronix.com
-touchdesigner			http://www.touch077.com
+touchdesigner		http://www.touch077.com
 quartzcomposer		http://www.apple.com
 fluxus				http://www.pawfal.org
-supercollider			http://supercollider.sourceforge.net
+supercollider		http://supercollider.sourceforge.net
 
 
 
